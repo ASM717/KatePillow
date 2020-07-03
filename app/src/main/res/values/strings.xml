@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KatePillow</string>
+    <string name="question_from_secodActiv">Что для вас сейчас важнее всего?</string>
+    <string name="chosen_recomendation">Выберите одну главную цель, а мы подберем рекомендации</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
