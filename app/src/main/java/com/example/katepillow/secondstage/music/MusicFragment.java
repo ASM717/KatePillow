@@ -80,16 +80,16 @@ public class MusicFragment extends Fragment {
     private void initImageBitmaps() {
         Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
 
-        mImgUrls.add("https://images.app.goo.gl/6ax4vuTfiYASqhZh8");
-        mImgUrls.add("https://images.app.goo.gl/XeDqGhBygmPs7MSz8");
-        mImgUrls.add("https://images.app.goo.gl/Qxb8BHrJgMB24ww29");
-        mImgUrls.add("https://images.app.goo.gl/B72TCZoXkJGd76dB8");
-        mImgUrls.add("https://images.app.goo.gl/DKVaWS1KuYeYrvcf9");
-        mImgUrls.add("https://images.app.goo.gl/6ax4vuTfiYASqhZh8");
-        mImgUrls.add("https://images.app.goo.gl/XeDqGhBygmPs7MSz8");
-        mImgUrls.add("https://images.app.goo.gl/Qxb8BHrJgMB24ww29");
-        mImgUrls.add("https://images.app.goo.gl/B72TCZoXkJGd76dB8");
-        mImgUrls.add("https://images.app.goo.gl/DKVaWS1KuYeYrvcf9");
+        mImgUrls.add("https://images.app.goo.gl/6ax4vuTfiYASqhZh8.jpg");
+        mImgUrls.add("https://images.app.goo.gl/XeDqGhBygmPs7MSz8.jpg");
+        mImgUrls.add("https://images.app.goo.gl/Qxb8BHrJgMB24ww29.jpg");
+        mImgUrls.add("https://images.app.goo.gl/B72TCZoXkJGd76dB8.jpg");
+        mImgUrls.add("https://images.app.goo.gl/DKVaWS1KuYeYrvcf9.jpg");
+        mImgUrls.add("https://images.app.goo.gl/6ax4vuTfiYASqhZh8.jpg");
+        mImgUrls.add("https://images.app.goo.gl/XeDqGhBygmPs7MSz8.jpg");
+        mImgUrls.add("https://images.app.goo.gl/Qxb8BHrJgMB24ww29.jpg");
+        mImgUrls.add("https://images.app.goo.gl/B72TCZoXkJGd76dB8.jpg");
+        mImgUrls.add("https://images.app.goo.gl/DKVaWS1KuYeYrvcf9.jpg");
 
         mImgNames.add("Звуки природы");
         mImgNames.add("Звуки дождя");
