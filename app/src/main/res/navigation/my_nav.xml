@@ -27,7 +27,7 @@
         tools:layout="@layout/fragment_person" />
     <fragment
         android:id="@+id/musicFragment"
-        android:name="com.example.katepillow.secondstage.MusicFragment"
+        android:name="com.example.katepillow.secondstage.music.MusicFragment"
         android:label="fragment_music"
         tools:layout="@layout/fragment_music" />
 </navigation>

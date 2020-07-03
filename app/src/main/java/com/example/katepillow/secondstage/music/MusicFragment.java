@@ -1,24 +1,17 @@
-package com.example.katepillow.secondstage;
+package com.example.katepillow.secondstage.music;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.katepillow.R;
-import com.example.katepillow.RecyclerViewAdapter;
-
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,8 +22,8 @@ public class MusicFragment extends Fragment {
 
     private static final String TAG = "MusicFragment";
 
-    public ArrayList<String> mImgNames = new ArrayList<>();
-    public ArrayList<String> mImgUrls = new ArrayList<>();
+    private List<MusicItem> musicItems;
+    private RecyclerView recyclerView; //добавил
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,35 +65,40 @@ public class MusicFragment extends Fragment {
         }
         Log.d(TAG, "onCreate: sterted.");
         initImageBitmaps();
-
-
-
     }
 
     private void initImageBitmaps() {
+
         Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
+        musicItems = new ArrayList<>();
 
-        mImgUrls.add("https://images.app.goo.gl/6ax4vuTfiYASqhZh8.jpg");
-        mImgUrls.add("https://images.app.goo.gl/XeDqGhBygmPs7MSz8.jpg");
-        mImgUrls.add("https://images.app.goo.gl/Qxb8BHrJgMB24ww29.jpg");
-        mImgUrls.add("https://images.app.goo.gl/B72TCZoXkJGd76dB8.jpg");
-        mImgUrls.add("https://images.app.goo.gl/DKVaWS1KuYeYrvcf9.jpg");
-        mImgUrls.add("https://images.app.goo.gl/6ax4vuTfiYASqhZh8.jpg");
-        mImgUrls.add("https://images.app.goo.gl/XeDqGhBygmPs7MSz8.jpg");
-        mImgUrls.add("https://images.app.goo.gl/Qxb8BHrJgMB24ww29.jpg");
-        mImgUrls.add("https://images.app.goo.gl/B72TCZoXkJGd76dB8.jpg");
-        mImgUrls.add("https://images.app.goo.gl/DKVaWS1KuYeYrvcf9.jpg");
-
-        mImgNames.add("Звуки природы");
-        mImgNames.add("Звуки дождя");
-        mImgNames.add("Звуки леса");
-        mImgNames.add("Звуки птиц");
-        mImgNames.add("Звуки урагана");
-        mImgNames.add("Звуки волн");
-        mImgNames.add("Звуки шелеста листьев");
-        mImgNames.add("Звуки сильного ветра");
-        mImgNames.add("Звуки прибоя");
-        mImgNames.add("Звуки снега");
+        musicItems.add(new MusicItem(
+                "Звуки природы", "https://images.app.goo.gl/6ax4vuTfiYASqhZh8.jpg"
+        ));
+        musicItems.add(new MusicItem(
+                "Звуки дождя", "https://images.app.goo.gl/XeDqGhBygmPs7MSz8.jpg"
+        ));
+        musicItems.add(new MusicItem(
+                "Звуки леса", "https://images.app.goo.gl/Qxb8BHrJgMB24ww29.jpg"
+        ));
+        musicItems.add(new MusicItem(
+                "Звуки птиц", "https://images.app.goo.gl/Qxb8BHrJgMB24ww29.jpg"
+        ));
+        musicItems.add(new MusicItem(
+                "Звуки урагана", "https://images.app.goo.gl/Qxb8BHrJgMB24ww29.jpg"
+        ));
+        musicItems.add(new MusicItem(
+                "Звуки волн", "https://images.app.goo.gl/Qxb8BHrJgMB24ww29.jpg"
+        ));
+        musicItems.add(new MusicItem(
+                "Звуки шелеста листьев", "https://images.app.goo.gl/Qxb8BHrJgMB24ww29.jpg"
+        ));
+        musicItems.add(new MusicItem(
+                "Звуки прибоя", "https://images.app.goo.gl/Qxb8BHrJgMB24ww29.jpg"
+        ));
+        musicItems.add(new MusicItem(
+                "Звуки снега", "https://images.app.goo.gl/Qxb8BHrJgMB24ww29.jpg"
+        ));
     }
 
     @Override
@@ -110,12 +108,13 @@ public class MusicFragment extends Fragment {
         //return inflater.inflate(R.layout.fragment_music, container, false);
 
         View view = inflater.inflate(R.layout.fragment_music, container, false);
-        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(getActivity(), mImgNames, mImgUrls);
+        recyclerView = view.findViewById(R.id.recycler_view);
+
+        MusicAdapter adapter = new MusicAdapter(getContext(), musicItems);
         recyclerView.setAdapter(adapter);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(linearLayoutManager);
         return view;
 
     }
-
 }
